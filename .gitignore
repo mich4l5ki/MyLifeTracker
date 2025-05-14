@@ -1,0 +1,13 @@
+# .gitignore
+
+# Python
+__pycache__/
+*.__pycache__.env
+mlt_backend/venv
+
+# Node
+node_modules/
+mlt_webapp/node_modules
+
+# Docker
+*.env
