@@ -10,10 +10,10 @@ services:
       - "5432:5432"
 
   backend:
-    build: ./mlt_backend
+    build: ./backend
     command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - ./mlt_backend:/app
+      - ./backend:/app
     ports:
       - "8000:8000"
     depends_on:
@@ -21,10 +21,10 @@ services:
     env_file: .env
 
   frontend:
-    build: ./mlt_webapp
+    build: ./frontend
     command: ng serve --host 0.0.0.0
     volumes:
-      - ./mlt_webapp:/app
+      - ./frontend:/app
     ports:
       - "4200:4200"
     depends_on:
